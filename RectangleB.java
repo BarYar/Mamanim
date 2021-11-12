@@ -131,7 +131,7 @@ public class RectangleB {
         return x >= this._pointSW.getX() && x <= this._pointNE.getX() && y >= this._pointSW.getY() && y <= this._pointNE.getY();
     }
 
-    // Checks if r is inside this ReactangleA (including shared edges)
+    // Checks if this ReactangleA is inside r(including shared edges)
     public boolean isIn(RectangleB r)
     {
         return isPointInsideReactangleA(r.getPointSW().getX(), r.getPointSW().getY()) && isPointInsideReactangleA(r.getPointNE().getX(), r.getPointNE().getY());
