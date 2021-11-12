@@ -62,11 +62,15 @@ public class RectangleB {
 
     public void setWidth(int w)
     {
-        this._pointNE.setX(this._pointSW.getY() + w);
+        this._pointNE.setX(this._pointSW.getX() + w);
     }
 
     public void setPointSW(Point p)
     {
+        int xDiff = p.getX() - this._pointSW.getX();
+        int yDiff = p.getY() - this._pointSW.getY();
+        Point updatedNE = new Point(this._pointNE.getX() + xDiff, this._pointNE.getY() + yDiff);
+        this.setPointNE(updatedNE);
         this._pointSW = p;
     }
 
@@ -117,7 +121,7 @@ public class RectangleB {
         return this.getArea() > other.getArea();
     }
 
-    // Change the sides of the ReactangleA - height become width and vice versa
+    // Change the sides of the ReactangleB - height become width and vice versa
     public void changeSides()
     {
         int temp = this.getWidth();
@@ -125,21 +129,41 @@ public class RectangleB {
         this.setHeight(temp);
     }
 
-    // Private methods for isIn and Overlap methods - checks if point (represented by x and y for avoiding creating a new point for some of the use cases)
-    private boolean isPointInsideReactangleA(int x, int y)
+    // Private methods for isIn and Overlap methods, checks if point from this RectangleB is inside r 
+    // loc is the location: SW / NW/ SE/ NE
+    private boolean isRectangleBPointInsideR(RectangleB r, String loc)
     {
-        return x >= this._pointSW.getX() && x <= this._pointNE.getX() && y >= this._pointSW.getY() && y <= this._pointNE.getY();
+        int pointX = 0, pointY = 0;
+        switch(loc){
+            case "SW":
+                pointX = this._pointSW.getX();
+                pointY = this._pointSW.getY();
+                break;
+            case "NW":
+                pointX = this._pointSW.getX();
+                pointY = this._pointSW.getY() + this.getHeight();
+                break;
+            case "SE":
+                pointX = this._pointSW.getX() + this.getWidth();
+                pointY = this._pointSW.getY();
+                break;
+            case "NE":
+                pointX = this.getPointNE().getX();
+                pointY = this.getPointNE().getY();
+                break;
+        }
+        return pointX >= r.getPointSW().getX() && pointX <= r.getPointNE().getX() && pointY >= r.getPointSW().getY() && pointY <= r.getPointNE().getY();
     }
 
-    // Checks if this ReactangleA is inside r(including shared edges)
+    // Checks if this ReactangleB is inside r(including shared edges)
     public boolean isIn(RectangleB r)
     {
-        return isPointInsideReactangleA(r.getPointSW().getX(), r.getPointSW().getY()) && isPointInsideReactangleA(r.getPointNE().getX(), r.getPointNE().getY());
+        return isRectangleBPointInsideR(r, "SW") && isRectangleBPointInsideR(r, "NE");
     }
 
-    // Checks if there is a lap between this reactangleA and r
+    // Checks if there is a lap between this reactangleB and r
     public boolean overlap(RectangleB r)
     {
-        return isPointInsideReactangleA(r.getPointSW().getX(), r.getPointSW().getY()) || isPointInsideReactangleA(r.getPointNE().getX(), r.getPointNE().getY()) ||  isPointInsideReactangleA(r.getPointSW().getX() +r.getWidth(), r.getPointSW().getY()) ||  isPointInsideReactangleA(r.getPointSW().getX() , r.getPointSW().getY() + r.getHeight());
+        return isRectangleBPointInsideR(r, "SW") || isRectangleBPointInsideR(r, "NW") || isRectangleBPointInsideR(r, "SE") || isRectangleBPointInsideR(r, "NE");
     }
 }// class RectangleB
