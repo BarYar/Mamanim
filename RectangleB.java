@@ -148,8 +148,8 @@ public class RectangleB {
                 pointY = this._pointSW.getY();
                 break;
             case "NE":
-                pointX = this.getPointNE().getX();
-                pointY = this.getPointNE().getY();
+                pointX = this._pointNE.getX();
+                pointY = this._pointNE.getY();
                 break;
         }
         return pointX >= r.getPointSW().getX() && pointX <= r.getPointNE().getX() && pointY >= r.getPointSW().getY() && pointY <= r.getPointNE().getY();

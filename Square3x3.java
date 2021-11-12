@@ -77,17 +77,17 @@ public class Square3x3 {
     // Checks if all the numbers from 1 to 9 are in the array - check that the right values exist only once
     public boolean allThere()
     {
-        int []array = new int[9];
+        boolean []array = new boolean[9];
         for(int i=0; i < 3; i++)
         {
             for(int j=0; j < 3; j++)
             {
                 if (this._3x3[i][j] >9 || this._3x3[i][j] <1 )
                     return false;
-                else if (array[i*j + j] == 1)
+                else if (array[this._3x3[i][j] - 1])
                     return false;
                 else 
-                    array[i*j + j] = 1;
+                    array[this._3x3[i][j] - 1] = true;
             }
         }
         return true;
