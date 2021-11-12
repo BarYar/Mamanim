@@ -31,7 +31,7 @@ public class Einstein
             // Checks if the input's tens and hundreds number are equal.
             if (units == hundreds)
             {
-                System.out.println("The  first  and  the  last  digits  of  the  number  should  be different.");
+                System.out.println("The  first  and  the  last  digits  of  the  number  should  be different");
             }
             else
             {
