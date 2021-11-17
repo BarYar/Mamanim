@@ -33,7 +33,7 @@ public class RectangleA {
 
     public RectangleA(RectangleA r)
     {
-        this(new Point(r.getPointSW().getX(), r.getPointSW().getY()), r.getWidth(), r.getHeight());
+        this(new Point(r.getPointSW()), r.getWidth(), r.getHeight());
     }
 
     // Getters and Setters
@@ -49,7 +49,7 @@ public class RectangleA {
 
     public Point getPointSW()
     {
-        return this._pointSW;
+        return new Point(this._pointSW);
     }
 
     public void setWidth(int w)

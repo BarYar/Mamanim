@@ -30,8 +30,8 @@ public class RectangleB {
 
     public RectangleB(RectangleB r)
     {
-        this._pointSW = new Point(r.getPointSW().getX(), r.getPointSW().getY());
-        this._pointNE = new Point(r.getPointNE().getX(), r.getPointNE().getY());
+        this._pointSW = new Point(r.getPointSW());
+        this._pointNE = new Point(r.getPointNE());
     }
 
     // Getters and Setters
@@ -47,12 +47,12 @@ public class RectangleB {
 
     public Point getPointSW()
     {
-        return this._pointSW;
+        return new Point(this._pointSW);
     }
 
     public Point getPointNE()
     {   
-        return this._pointNE;  
+        return new Point(this._pointNE);  
     }
 
     public void setHeight(int h)
