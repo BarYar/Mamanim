@@ -124,22 +124,14 @@ public class RectangleA {
         this._height = temp;
     }
 
-    // Private methods for isIn and Overlap methods, checks if point from this RectangleA is inside r 
-    // loc is the location: SW / NW/ SE/ NE
+    // Private methods for isIn method, checks if point from this RectangleA is inside r 
+    // loc is the location: SW/ NE
     private boolean isRectangleAPointInsideR(RectangleA r, String loc)
     {
         int pointX = 0, pointY = 0;
         switch(loc){
             case "SW":
                 pointX = this._pointSW.getX();
-                pointY = this._pointSW.getY();
-                break;
-            case "NW":
-                pointX = this._pointSW.getX();
-                pointY = this._pointSW.getY() + this._height;
-                break;
-            case "SE":
-                pointX = this._pointSW.getX() + this._width;
                 pointY = this._pointSW.getY();
                 break;
             case "NE":
@@ -159,7 +151,7 @@ public class RectangleA {
     // Checks if there is a lap between this reactangleA and r
     public boolean overlap(RectangleA r)
     {
-        return isRectangleAPointInsideR(r, "SW") || isRectangleAPointInsideR(r, "NW") || isRectangleAPointInsideR(r, "SE") || isRectangleAPointInsideR(r, "NE");
+        return this.getPointNE().getX() >= r.getPointSW().getX() && this._pointSW.getX() <= r.getPointNE().getX() && this._pointSW.getY() <= r.getPointNE().getY() && this.getPointNE().getY() >= r.getPointSW().getY();
     }
 
 }// class RectangleA

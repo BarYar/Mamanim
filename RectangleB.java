@@ -57,12 +57,14 @@ public class RectangleB {
 
     public void setHeight(int h)
     {
-        this._pointNE.setY(this._pointSW.getY() + h);
+        if (h > 0)
+            this._pointNE.setY(this._pointSW.getY() + h);
     }
 
     public void setWidth(int w)
     {
-        this._pointNE.setX(this._pointSW.getX() + w);
+        if (w > 0)
+            this._pointNE.setX(this._pointSW.getX() + w);
     }
 
     public void setPointSW(Point p)
@@ -101,6 +103,7 @@ public class RectangleB {
     public void move(int deltaX, int deltaY)
     {
         this._pointSW.move(deltaX, deltaY);
+        this._pointNE.move(deltaX, deltaY);
     }
 
     // Checks if this RectangleB and other are equal
@@ -129,22 +132,14 @@ public class RectangleB {
         this.setHeight(temp);
     }
 
-    // Private methods for isIn and Overlap methods, checks if point from this RectangleB is inside r 
-    // loc is the location: SW / NW/ SE/ NE
+    // Private methods for isIn method, checks if point from this RectangleB is inside r 
+    // loc is the location: SW / NE
     private boolean isRectangleBPointInsideR(RectangleB r, String loc)
     {
         int pointX = 0, pointY = 0;
         switch(loc){
             case "SW":
                 pointX = this._pointSW.getX();
-                pointY = this._pointSW.getY();
-                break;
-            case "NW":
-                pointX = this._pointSW.getX();
-                pointY = this._pointSW.getY() + this.getHeight();
-                break;
-            case "SE":
-                pointX = this._pointSW.getX() + this.getWidth();
                 pointY = this._pointSW.getY();
                 break;
             case "NE":
@@ -164,6 +159,6 @@ public class RectangleB {
     // Checks if there is a lap between this reactangleB and r
     public boolean overlap(RectangleB r)
     {
-        return isRectangleBPointInsideR(r, "SW") || isRectangleBPointInsideR(r, "NW") || isRectangleBPointInsideR(r, "SE") || isRectangleBPointInsideR(r, "NE");
+        return this._pointNE.getX() >= r.getPointSW().getX() && this._pointSW.getX() <= r.getPointNE().getX() && this._pointSW.getY() <= r.getPointNE().getY() && this._pointNE.getY() >= r.getPointSW().getY();
     }
 }// class RectangleB
