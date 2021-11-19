@@ -147,6 +147,8 @@ public class RectangleB {
                 pointY = this._pointNE.getY();
                 break;
         }
+
+        // Same explanation as in RectangleA
         return pointX >= r.getPointSW().getX() && pointX <= r.getPointNE().getX() && pointY >= r.getPointSW().getY() && pointY <= r.getPointNE().getY();
     }
 
@@ -159,6 +161,8 @@ public class RectangleB {
     // Checks if there is a lap between this reactangleB and r
     public boolean overlap(RectangleB r)
     {
+        
+        // Same explanation as in RectangleA
         return this._pointNE.getX() >= r.getPointSW().getX() && this._pointSW.getX() <= r.getPointNE().getX() && this._pointSW.getY() <= r.getPointNE().getY() && this._pointNE.getY() >= r.getPointSW().getY();
     }
 }// class RectangleB
