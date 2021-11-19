@@ -139,6 +139,10 @@ public class RectangleA {
                 pointY = this.getPointNE().getY();
                 break;
         }
+        // I didn't use the isAbove, isUnder, isLeft and isRight methods becuase they're making the code longer and more complicated
+        // For example - the first condition would look like this if used those methods (I would use Point p insread pointX and pointY):  
+        // p.isRight(r.getPointSW()) ||  (!p.isRight(r.getPointSW()) && (!p.isLeft(r.getPointSW()) instead of: pointX >= r.getPointSW().getX()
+        // I could've made xEquals and yEquals methods in Point but it wouldn't help because they're private
         return pointX >= r.getPointSW().getX() && pointX <= r.getPointNE().getX() && pointY >= r.getPointSW().getY() && pointY <= r.getPointNE().getY();
     }
 
@@ -151,6 +155,7 @@ public class RectangleA {
     // Checks if there is a lap between this reactangleA and r
     public boolean overlap(RectangleA r)
     {
+        // Same explantion as in isRectangleAPointInsideR
         return this.getPointNE().getX() >= r.getPointSW().getX() && this._pointSW.getX() <= r.getPointNE().getX() && this._pointSW.getY() <= r.getPointNE().getY() && this.getPointNE().getY() >= r.getPointSW().getY();
     }
 
