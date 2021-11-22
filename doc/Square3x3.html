@@ -130,9 +130,14 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <hr>
 <pre>public class <span class="typeNameLabel">Square3x3</span>
 extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></pre>
-<div class="block">Name: Bar Yaron
- The Square3x3 class represents a 2 dimensional array of ints with size of 3x3
+<div class="block">The Square3x3 class represents a 2 dimensional array of ints with size of 3x3
  This class has 1 instance variable</div>
+<dl>
+<dt><span class="simpleTagLabel">Version:</span></dt>
+<dd>23/11/21</dd>
+<dt><span class="simpleTagLabel">Author:</span></dt>
+<dd>Bar Yaron</dd>
+</dl>
 </li>
 </ul>
 </div>
@@ -154,15 +159,22 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 </tr>
 <tr class="altColor">
 <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E()">Square3x3</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Constructor that enters -1 to every cell in the Square</div>
+</td>
 </tr>
 <tr class="rowColor">
 <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(int%5B%5D%5B%5D)">Square3x3</a></span>&#8203;(int[][]&nbsp;array)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Copy constructor from array- copies the values from the other array if it has values in the cell,
+ otherwise it sets the cell to -1</div>
+</td>
 </tr>
 <tr class="altColor">
 <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(Square3x3)">Square3x3</a></span>&#8203;(<a href="Square3x3.html" title="class in &lt;Unnamed&gt;">Square3x3</a>&nbsp;other)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Copy constructor from Square3x3- copies the values from the other Square3x3</div>
+</td>
 </tr>
 </table>
 </li>
@@ -185,37 +197,53 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#allThere()">allThere</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Checks if all the numbers from 1 to 9 are in the array, 
+ checks that the right values exist only once.</div>
+</td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getCell(int,int)">getCell</a></span>&#8203;(int&nbsp;row,
        int&nbsp;col)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Returns the cell at the given location if the location is valid, otherwise it returns -1</div>
+</td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setXY(int,int,int)">setXY</a></span>&#8203;(int&nbsp;row,
      int&nbsp;col,
      int&nbsp;value)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Sets the cell at the given location if the location is valid, 
+ otherwise the value of the cell remain as it is now</div>
+</td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toString()">toString</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Returns the string of Square3x3</div>
+</td>
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#whosThereCol(int,boolean%5B%5D)">whosThereCol</a></span>&#8203;(int&nbsp;col,
             boolean[]&nbsp;values)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Checks if this _3x3 has a number between 1 and 9 in the given column, 
+ if so then it sets the value of the array in the number to true</div>
+</td>
 </tr>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#whosThereRow(int,boolean%5B%5D)">whosThereRow</a></span>&#8203;(int&nbsp;row,
             boolean[]&nbsp;values)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Checks if this _3x3 has a number between 1 and 9 in the given row, 
+ if so then it sets the value of the array in the number to true</div>
+</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -248,6 +276,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <li class="blockList">
 <h4>Square3x3</h4>
 <pre>public&nbsp;Square3x3()</pre>
+<div class="block">Constructor that enters -1 to every cell in the Square</div>
 </li>
 </ul>
 <a id="&lt;init&gt;(int[][])">
@@ -257,6 +286,12 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <li class="blockList">
 <h4>Square3x3</h4>
 <pre>public&nbsp;Square3x3&#8203;(int[][]&nbsp;array)</pre>
+<div class="block">Copy constructor from array- copies the values from the other array if it has values in the cell,
+ otherwise it sets the cell to -1</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>array</code> - the copied array</dd>
+</dl>
 </li>
 </ul>
 <a id="&lt;init&gt;(Square3x3)">
@@ -266,6 +301,11 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <li class="blockList">
 <h4>Square3x3</h4>
 <pre>public&nbsp;Square3x3&#8203;(<a href="Square3x3.html" title="class in &lt;Unnamed&gt;">Square3x3</a>&nbsp;other)</pre>
+<div class="block">Copy constructor from Square3x3- copies the values from the other Square3x3</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>other</code> - the Square3x3 that will be copied</dd>
+</dl>
 </li>
 </ul>
 </li>
@@ -286,6 +326,14 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <h4>getCell</h4>
 <pre class="methodSignature">public&nbsp;int&nbsp;getCell&#8203;(int&nbsp;row,
                    int&nbsp;col)</pre>
+<div class="block">Returns the cell at the given location if the location is valid, otherwise it returns -1</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>row</code> - the row of the location</dd>
+<dd><code>col</code> - the column of the location</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the cell value</dd>
+</dl>
 </li>
 </ul>
 <a id="setXY(int,int,int)">
@@ -297,6 +345,14 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <pre class="methodSignature">public&nbsp;void&nbsp;setXY&#8203;(int&nbsp;row,
                   int&nbsp;col,
                   int&nbsp;value)</pre>
+<div class="block">Sets the cell at the given location if the location is valid, 
+ otherwise the value of the cell remain as it is now</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>row</code> - the row of the location</dd>
+<dd><code>col</code> - the column of the location</dd>
+<dd><code>value</code> - the value to be set to the cell</dd>
+</dl>
 </li>
 </ul>
 <a id="toString()">
@@ -306,9 +362,12 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <li class="blockList">
 <h4>toString</h4>
 <pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;toString()</pre>
+<div class="block">Returns the string of Square3x3</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang" class="externalLink">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></code></dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the string of the Square3x3</dd>
 </dl>
 </li>
 </ul>
@@ -319,6 +378,12 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <li class="blockList">
 <h4>allThere</h4>
 <pre class="methodSignature">public&nbsp;boolean&nbsp;allThere()</pre>
+<div class="block">Checks if all the numbers from 1 to 9 are in the array, 
+ checks that the right values exist only once.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>if the above conditions are true(boolean).</dd>
+</dl>
 </li>
 </ul>
 <a id="whosThereRow(int,boolean[])">
@@ -329,6 +394,13 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <h4>whosThereRow</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;whosThereRow&#8203;(int&nbsp;row,
                          boolean[]&nbsp;values)</pre>
+<div class="block">Checks if this _3x3 has a number between 1 and 9 in the given row, 
+ if so then it sets the value of the array in the number to true</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>row</code> - the row to be checked</dd>
+<dd><code>values</code> - the values array</dd>
+</dl>
 </li>
 </ul>
 <a id="whosThereCol(int,boolean[])">
@@ -339,6 +411,13 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <h4>whosThereCol</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;whosThereCol&#8203;(int&nbsp;col,
                          boolean[]&nbsp;values)</pre>
+<div class="block">Checks if this _3x3 has a number between 1 and 9 in the given column, 
+ if so then it sets the value of the array in the number to true</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>col</code> - the col to be checked</dd>
+<dd><code>values</code> - the values array</dd>
+</dl>
 </li>
 </ul>
 </li>

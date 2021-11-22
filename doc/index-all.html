@@ -96,7 +96,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <h2 class="title">A</h2>
 <dl>
 <dt><span class="memberNameLink"><a href="Square3x3.html#allThere()">allThere()</a></span> - Method in class <a href="Square3x3.html" title="class in &lt;Unnamed&gt;">Square3x3</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Checks if all the numbers from 1 to 9 are in the array, 
+ checks that the right values exist only once.</div>
+</dd>
 </dl>
 <a id="I:C">
 <!--   -->
@@ -162,7 +165,9 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">get the area of the Rectangle</div>
 </dd>
 <dt><span class="memberNameLink"><a href="Square3x3.html#getCell(int,int)">getCell(int, int)</a></span> - Method in class <a href="Square3x3.html" title="class in &lt;Unnamed&gt;">Square3x3</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Returns the cell at the given location if the location is valid, otherwise it returns -1</div>
+</dd>
 <dt><span class="memberNameLink"><a href="RectangleA.html#getDiagonalLength()">getDiagonalLength()</a></span> - Method in class <a href="RectangleA.html" title="class in &lt;Unnamed&gt;">RectangleA</a></dt>
 <dd>
 <div class="block">Returns the length of the diagonal</div>
@@ -258,7 +263,9 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Returns whether this point is under the other point</div>
 </dd>
 <dt><span class="memberNameLink"><a href="Sudoku.html#isValid()">isValid()</a></span> - Method in class <a href="Sudoku.html" title="class in &lt;Unnamed&gt;">Sudoku</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">This method checks if the Sudoku board is valid</div>
+</dd>
 </dl>
 <a id="I:M">
 <!--   -->
@@ -449,37 +456,49 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Sets the x</div>
 </dd>
 <dt><span class="memberNameLink"><a href="Square3x3.html#setXY(int,int,int)">setXY(int, int, int)</a></span> - Method in class <a href="Square3x3.html" title="class in &lt;Unnamed&gt;">Square3x3</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Sets the cell at the given location if the location is valid, 
+ otherwise the value of the cell remain as it is now</div>
+</dd>
 <dt><span class="memberNameLink"><a href="Point.html#setY(int)">setY(int)</a></span> - Method in class <a href="Point.html" title="class in &lt;Unnamed&gt;">Point</a></dt>
 <dd>
 <div class="block">Sets the y</div>
 </dd>
 <dt><a href="Square3x3.html" title="class in &lt;Unnamed&gt;"><span class="typeNameLink">Square3x3</span></a> - Class in <a href="package-summary.html">&lt;Unnamed&gt;</a></dt>
 <dd>
-<div class="block">Name: Bar Yaron
- The Square3x3 class represents a 2 dimensional array of ints with size of 3x3
+<div class="block">The Square3x3 class represents a 2 dimensional array of ints with size of 3x3
  This class has 1 instance variable</div>
 </dd>
 <dt><span class="memberNameLink"><a href="Square3x3.html#%3Cinit%3E()">Square3x3()</a></span> - Constructor for class <a href="Square3x3.html" title="class in &lt;Unnamed&gt;">Square3x3</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Constructor that enters -1 to every cell in the Square</div>
+</dd>
 <dt><span class="memberNameLink"><a href="Square3x3.html#%3Cinit%3E(int%5B%5D%5B%5D)">Square3x3(int[][])</a></span> - Constructor for class <a href="Square3x3.html" title="class in &lt;Unnamed&gt;">Square3x3</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Copy constructor from array- copies the values from the other array if it has values in the cell,
+ otherwise it sets the cell to -1</div>
+</dd>
 <dt><span class="memberNameLink"><a href="Square3x3.html#%3Cinit%3E(Square3x3)">Square3x3(Square3x3)</a></span> - Constructor for class <a href="Square3x3.html" title="class in &lt;Unnamed&gt;">Square3x3</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Copy constructor from Square3x3- copies the values from the other Square3x3</div>
+</dd>
 <dt><a href="StudentEx13Tester.html" title="class in &lt;Unnamed&gt;"><span class="typeNameLink">StudentEx13Tester</span></a> - Class in <a href="package-summary.html">&lt;Unnamed&gt;</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="StudentEx13Tester.html#%3Cinit%3E()">StudentEx13Tester()</a></span> - Constructor for class <a href="StudentEx13Tester.html" title="class in &lt;Unnamed&gt;">StudentEx13Tester</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="Sudoku.html" title="class in &lt;Unnamed&gt;"><span class="typeNameLink">Sudoku</span></a> - Class in <a href="package-summary.html">&lt;Unnamed&gt;</a></dt>
 <dd>
-<div class="block">Name: Bar Yaron
- The Sudoku class represents a 2 dimensional array of Square3x3 with size of 3x3
+<div class="block">The Sudoku class represents a 2 dimensional array of Square3x3 with size of 3x3
  This class has 1 instance variable</div>
 </dd>
 <dt><span class="memberNameLink"><a href="Sudoku.html#%3Cinit%3E()">Sudoku()</a></span> - Constructor for class <a href="Sudoku.html" title="class in &lt;Unnamed&gt;">Sudoku</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Constructor that enters -1 to every cell in the Sudoku</div>
+</dd>
 <dt><span class="memberNameLink"><a href="Sudoku.html#%3Cinit%3E(Square3x3%5B%5D%5B%5D)">Sudoku(Square3x3[][])</a></span> - Constructor for class <a href="Sudoku.html" title="class in &lt;Unnamed&gt;">Sudoku</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Coyt constructor of values from Square3x3 array</div>
+</dd>
 </dl>
 <a id="I:T">
 <!--   -->
@@ -499,7 +518,9 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Returns the string of RectangleB</div>
 </dd>
 <dt><span class="memberNameLink"><a href="Square3x3.html#toString()">toString()</a></span> - Method in class <a href="Square3x3.html" title="class in &lt;Unnamed&gt;">Square3x3</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Returns the string of Square3x3</div>
+</dd>
 </dl>
 <a id="I:W">
 <!--   -->
@@ -507,9 +528,15 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <h2 class="title">W</h2>
 <dl>
 <dt><span class="memberNameLink"><a href="Square3x3.html#whosThereCol(int,boolean%5B%5D)">whosThereCol(int, boolean[])</a></span> - Method in class <a href="Square3x3.html" title="class in &lt;Unnamed&gt;">Square3x3</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Checks if this _3x3 has a number between 1 and 9 in the given column, 
+ if so then it sets the value of the array in the number to true</div>
+</dd>
 <dt><span class="memberNameLink"><a href="Square3x3.html#whosThereRow(int,boolean%5B%5D)">whosThereRow(int, boolean[])</a></span> - Method in class <a href="Square3x3.html" title="class in &lt;Unnamed&gt;">Square3x3</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Checks if this _3x3 has a number between 1 and 9 in the given row, 
+ if so then it sets the value of the array in the number to true</div>
+</dd>
 </dl>
 <a href="#I:A">A</a>&nbsp;<a href="#I:C">C</a>&nbsp;<a href="#I:D">D</a>&nbsp;<a href="#I:E">E</a>&nbsp;<a href="#I:G">G</a>&nbsp;<a href="#I:I">I</a>&nbsp;<a href="#I:M">M</a>&nbsp;<a href="#I:O">O</a>&nbsp;<a href="#I:P">P</a>&nbsp;<a href="#I:R">R</a>&nbsp;<a href="#I:S">S</a>&nbsp;<a href="#I:T">T</a>&nbsp;<a href="#I:W">W</a>&nbsp;<br><a href="allclasses-index.html">All&nbsp;Classes</a>&nbsp;<a href="allpackages-index.html">All&nbsp;Packages</a></div>
 </main>

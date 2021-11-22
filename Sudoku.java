@@ -1,20 +1,27 @@
 /**
- * Name: Bar Yaron
  * The Sudoku class represents a 2 dimensional array of Square3x3 with size of 3x3
  * This class has 1 instance variable
+ * @author Bar Yaron
+ * @version 23/11/21
  */
 public class Sudoku {
     
-    // instance variables
     private Square3x3[][] _9x9; 
 
-    // Constructor of empty values (-1)
+    // Constructors
+    /** Constructor that enters -1 to every cell in the Sudoku
+     */
     public Sudoku()
     {
-        this._9x9 = new Square3x3[3][3]; 
+        this._9x9 = new Square3x3[3][3];
+        for (int i = 0; i < 3; i++)
+            for (int j = 0; j < 3; j++)
+                this._9x9[i][j] = new Square3x3();
     }
 
-    // Constructor of values from array
+    /** Coyt constructor of values from Square3x3 array
+     * @param square3x3Array the Square3x3 array that will be copied 
+     */
     public Sudoku(Square3x3[][] square3x3Array)
     {
         this._9x9 = new Square3x3[3][3];
@@ -24,7 +31,11 @@ public class Sudoku {
 
     }
 
-    // Private method for the isValid method that checks if all the values of the array are true and set them to false
+    /** Private method for the isValid method that checks if all the values of the array are true and afterwards
+     * it sets them to false
+     * @param values the values array 
+     * @return whether all the values of the array are true
+     */
     private boolean allValuesAreTrue(boolean[]values)
     {
         for (int i = 1 ; i < values.length; i++)
@@ -36,7 +47,9 @@ public class Sudoku {
         return true;
     }
 
-    // This method checks if the Sudoku board is valid
+    /** This method checks if the Sudoku board is valid
+     * @return if the board is valid
+     */
     public boolean isValid()
     {
         int i = 0, j = 0; 
