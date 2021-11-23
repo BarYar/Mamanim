@@ -13,10 +13,10 @@ public class Sudoku {
      */
     public Sudoku()
     {
-        this._9x9 = new Square3x3[3][3];
+        this._9x9 = new Square3x3[3][3]; 
         for (int i = 0; i < 3; i++)
             for (int j = 0; j < 3; j++)
-                this._9x9[i][j] = new Square3x3();
+                this._9x9[i][j] = new Square3x3(); // Creating a new object in each of the cells in the array
     }
 
     /** Coyt constructor of values from Square3x3 array
@@ -27,7 +27,7 @@ public class Sudoku {
         this._9x9 = new Square3x3[3][3];
         for (int i = 0; i < 3; i++)
             for (int j = 0; j < 3; j++)
-                this._9x9[i][j] = new Square3x3(square3x3Array[i][j]);
+                this._9x9[i][j] = new Square3x3(square3x3Array[i][j]); // Using the copy constructor of Square3x3
 
     }
 
@@ -42,7 +42,7 @@ public class Sudoku {
         {
             if (!values[i])
                 return false;
-            values[i] = false;
+            values[i] = false; // In false cases it wouldn't reach this code, however it doesn't matter since isValid returns false if allValuesAreTrue false
         }
         return true;
     }
@@ -52,12 +52,14 @@ public class Sudoku {
      */
     public boolean isValid()
     {
-        int i = 0, j = 0; 
+        int i = 0, j = 0; // Preventing declaration in each loop
+        // Checks if all of the values exist in all of the Square3x3
         for (; i < 3; i++)
             for (; j < 3; j++)
                 if (!this._9x9[i][j].allThere())
                     return false;
         boolean values[] = new boolean [10];
+        // Checking if all of the values exist in each row
         for (i = 0; i < 9; i++)
         {
             for(j = 0; j < 3 ; j++)
@@ -65,6 +67,7 @@ public class Sudoku {
             if (!allValuesAreTrue(values))
                 return false;
         }
+        // Checking if all of the values exist in each column
         for (i = 0; i < 9; i++)
         {
             for(j = 0; j < 3 ; j++)
@@ -72,7 +75,7 @@ public class Sudoku {
             if (!allValuesAreTrue(values))
                 return false;
         }
-        return true;        
+        return true; // If all of the check didn't return false, then I return true        
     }
 
 }
