@@ -17,7 +17,7 @@ public class RectangleB {
     public RectangleB(int w, int h)
     {
         this._pointSW = new Point(0,0);
-        this._pointNE = new Point(w > 0 ? w : 1, h > 0 ? h : 1);
+        this._pointNE = new Point(w > 0 ? w : 1, h > 0 ? h : 1); // If the width and the height aren't > 0 then it sets the coordinates to 1
     }
 
     /** Constructor with the width, the height and the South West point as parameters
@@ -28,7 +28,7 @@ public class RectangleB {
     public RectangleB(Point p , int w, int h)
     {
         this._pointSW = p;
-        this._pointNE = new Point(p.getX() + (w > 0 ? w : 1), p.getY() + (h > 0 ? h : 1));
+        this._pointNE = new Point(p.getX() + (w > 0 ? w : 1), p.getY() + (h > 0 ? h : 1)); // If the width and the height aren't > 0 then it sets the coordinates to 1
     }
 
     /** Constructor with the South West point and the North East point as parameters
@@ -37,8 +37,8 @@ public class RectangleB {
      */
     public RectangleB(Point sw, Point ne)
     {
-        this._pointSW = sw;
-        this._pointNE = ne;
+        this._pointSW = new Point(sw);
+        this._pointNE = new Point(ne);
     }
 
     /** Copy constructor - Copies the given Rectangle and creates a new one
@@ -46,8 +46,8 @@ public class RectangleB {
      */
     public RectangleB(RectangleB r)
     {
-        this._pointSW = new Point(r.getPointSW());
-        this._pointNE = new Point(r.getPointNE());
+        this._pointSW = r.getPointSW(); // There is no Aliasing since the get returns a new Point
+        this._pointNE = r.getPointNE(); // There is no Aliasing since the get returns a new Point
     }
 
     /** get the width of the Rectangle
@@ -88,7 +88,7 @@ public class RectangleB {
     public void setWidth(int w)
     {
         if (w > 0)
-            this._pointNE.setX(this._pointSW.getX() + w);
+            this._pointNE.setX(this._pointSW.getX() + w); // if w isn't > 0 then the value remain as it is
     }
 
     /** Sets the height of the Rectangle
@@ -97,7 +97,7 @@ public class RectangleB {
     public void setHeight(int h)
     {
         if (h > 0)
-            this._pointNE.setY(this._pointSW.getY() + h);
+            this._pointNE.setY(this._pointSW.getY() + h); // if h isn't > 0 then the value remain as it is
     }
 
     /** Sets the South West point of the Rectangle
@@ -105,10 +105,9 @@ public class RectangleB {
      */
     public void setPointSW(Point p)
     {
-        int xDiff = p.getX() - this._pointSW.getX();
-        int yDiff = p.getY() - this._pointSW.getY();
-        Point updatedNE = new Point(this._pointNE.getX() + xDiff, this._pointNE.getY() + yDiff);
-        this.setPointNE(updatedNE);
+        int xDiff = p.getX() - this._pointSW.getX(); // The difference between the given point p and this SW in the X
+        int yDiff = p.getY() - this._pointSW.getY(); // The difference between the given point p and this SW in the Y 
+        this.setPointNE(new Point(this._pointNE.getX() + xDiff, this._pointNE.getY() + yDiff)); // Updating the NE point according to the sw change (Using xDiff and yDiff), There is no Aliasing since the set creates a new Point 
         this._pointSW = new Point(p);
     }
 
@@ -150,6 +149,7 @@ public class RectangleB {
      */
     public void move(int deltaX, int deltaY)
     {
+        // We need to move both points according to the deltas
         this._pointSW.move(deltaX, deltaY);
         this._pointNE.move(deltaX, deltaY);
     }
@@ -168,7 +168,7 @@ public class RectangleB {
      */
     public double getDiagonalLength()
     {
-        return Math.sqrt(Math.pow(this.getHeight(), 2) + Math.pow(this.getWidth(), 2));
+        return Math.sqrt(Math.pow(this.getHeight(), 2) + Math.pow(this.getWidth(), 2)); // Pythagorean theorem
     }
 
     /** Returns if this ReactangleB area is larger than other
@@ -207,9 +207,8 @@ public class RectangleB {
                 pointY = this._pointNE.getY();
                 break;
         }
-
         // Same explanation as in RectangleA
-        return pointX >= r.getPointSW().getX() && pointX <= r.getPointNE().getX() && pointY >= r.getPointSW().getY() && pointY <= r.getPointNE().getY();
+        return pointX >= r.getPointSW().getX() && pointX <= r.getPointNE().getX() && pointY >= r.getPointSW().getY() && pointY <= r.getPointNE().getY(); // If the point is within this range then the point is inside the rectangle
     }
 
     /** Checks if this ReactangleB is inside r(including shared edges)
@@ -228,6 +227,6 @@ public class RectangleB {
     public boolean overlap(RectangleB r)
     {
         // Same explanation as in RectangleA
-        return this._pointNE.getX() >= r.getPointSW().getX() && this._pointSW.getX() <= r.getPointNE().getX() && this._pointSW.getY() <= r.getPointNE().getY() && this._pointNE.getY() >= r.getPointSW().getY();
+        return this._pointNE.getX() >= r.getPointSW().getX() && this._pointSW.getX() <= r.getPointNE().getX() && this._pointSW.getY() <= r.getPointNE().getY() && this._pointNE.getY() >= r.getPointSW().getY(); // If the SW and the NE points are within this range than the Rectangles overlap
     }
 }// class RectangleB

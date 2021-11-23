@@ -93,7 +93,7 @@ public class Point{
      */ 
     public boolean isUnder(Point other)
     {
-        return !this.isAbove(other);
+        return !this.isAbove(other); // Opposite of isAbove
     }
 
     /** Returns whether this point is to the left of the other point
@@ -111,7 +111,7 @@ public class Point{
      */ 
     public boolean isRight(Point other)
     {
-        return !this.isLeft(other);
+        return !this.isLeft(other); // Opposite of isRight
     }
 
     /** Moving the point on the x and y axis with the deltas
@@ -130,7 +130,7 @@ public class Point{
      */
     public double distance(Point other)
     {
-        return Math.sqrt(Math.pow(this._y - other.getY(), 2) + Math.pow(this._x - other.getX(), 2));
+        return Math.sqrt(Math.pow(this._y - other.getY(), 2) + Math.pow(this._x - other.getX(), 2)); // √((y1-y2)^2 +(x1-x2)^2)
     }
 
 }// class Point

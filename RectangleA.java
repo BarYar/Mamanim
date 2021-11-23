@@ -18,8 +18,8 @@ public class RectangleA {
      */
     public RectangleA(int width, int height)
     {
-        this._width = width > 0 ? width : 1;
-        this._height = height > 0 ? height : 1;
+        this._width = width > 0 ? width : 1; // If width isn't > 0 then it sets it to 0
+        this._height = height > 0 ? height : 1; // If height isn't > 0 then it sets it to 0
         this._pointSW = new Point(0 , 0);
     }
 
@@ -30,8 +30,8 @@ public class RectangleA {
      */
     public RectangleA(Point p, int width, int height)
     {
-        this._width = width > 0 ? width : 1;
-        this._height = height > 0 ? height : 1;
+        this._width = width > 0 ? width : 1; // If width isn't > 0 then it sets it to 0
+        this._height = height > 0 ? height : 1; // If height isn't > 0 then it sets it to 0
         this._pointSW = p;
     }
 
@@ -41,7 +41,7 @@ public class RectangleA {
      */
     public RectangleA(Point sw, Point ne)
     {
-        this(sw, ne.getX() - sw.getX(), ne.getY() - sw.getY() );
+        this(sw, ne.getX() - sw.getX(), ne.getY() - sw.getY()); // The width and the height are the x and y distances accordingly
     }
 
     /** Copy constructor - Copies the given Rectangle and creates a new one
@@ -49,7 +49,7 @@ public class RectangleA {
      */
     public RectangleA(RectangleA r)
     {
-        this(new Point(r.getPointSW()), r.getWidth(), r.getHeight());
+        this(r.getPointSW(), r.getWidth(), r.getHeight()); // There is no Aliasing since the get returns a new Point
     }
 
     /** get the width of the Rectangle
@@ -81,7 +81,7 @@ public class RectangleA {
      */
     public void setWidth(int w)
     {
-        this._width = w  > 0 ? w : this._width;
+        this._width = w  > 0 ? w : this._width; // If the width isn't > 0  then it sets it to 0
     }
 
     /** Sets the height of the Rectangle
@@ -89,7 +89,7 @@ public class RectangleA {
      */
     public void setHeight(int h)
     {
-        this._height = h  > 0 ? h : this._height;
+        this._height = h  > 0 ? h : this._height; // If the height isn't > 0  then it sets it to 0
     }
 
     /** Sets the South West point of the Rectangle
@@ -147,7 +147,7 @@ public class RectangleA {
      */
     public double getDiagonalLength()
     {
-        return Math.sqrt(Math.pow(this._height, 2) + Math.pow(this._width, 2));
+        return Math.sqrt(Math.pow(this._height, 2) + Math.pow(this._width, 2)); // Pythagorean theorem
     }
 
     /** Returns if this ReactangleA area is larger than other
@@ -164,8 +164,7 @@ public class RectangleA {
      */
     public Point getPointNE()
     {   
-        Point ne = new Point(this._pointSW.getX() + this._width, this._pointSW.getY() + this._height);
-        return ne;
+        return new Point(this._pointSW.getX() + this._width, this._pointSW.getY() + this._height); // Creating the North East point by using the SW point, the width and the height
     }
 
     /** Change the sides of the ReactangleA - height become width and vice versa
@@ -199,7 +198,7 @@ public class RectangleA {
          For example - the first condition would look like this if used those methods (I would use Point p instead pointX and pointY):  
          p.isRight(r.getPointSW()) ||  (!p.isRight(r.getPointSW()) && (!p.isLeft(r.getPointSW()) instead of: pointX >= r.getPointSW().getX()
          I could've made xEquals and yEquals methods in Point but it wouldn't help because they're private */
-        return pointX >= r.getPointSW().getX() && pointX <= r.getPointNE().getX() && pointY >= r.getPointSW().getY() && pointY <= r.getPointNE().getY();
+        return pointX >= r.getPointSW().getX() && pointX <= r.getPointNE().getX() && pointY >= r.getPointSW().getY() && pointY <= r.getPointNE().getY(); // If the point is within this range then the point is inside the rectangle
     }
 
     /** Checks if this ReactangleA is inside r(including shared edges)
@@ -208,7 +207,7 @@ public class RectangleA {
      */
     public boolean isIn(RectangleA r)
     {
-        return isRectangleAPointInsideR(r, "SW") && isRectangleAPointInsideR(r, "NE");
+        return isRectangleAPointInsideR(r, "SW") && isRectangleAPointInsideR(r, "NE"); // If the SW and the NE points are inside the Rectangle r then this entire Rectangle is inside r
     }
 
     /** Checks if there is a lap between this reactangleA and r
@@ -217,8 +216,8 @@ public class RectangleA {
      */
     public boolean overlap(RectangleA r)
     {
-        // Same explantion as in isRectangleAPointInsideR
-        return this.getPointNE().getX() >= r.getPointSW().getX() && this._pointSW.getX() <= r.getPointNE().getX() && this._pointSW.getY() <= r.getPointNE().getY() && this.getPointNE().getY() >= r.getPointSW().getY();
+        // Same explanation as in isRectangleAPointInsideR
+        return this.getPointNE().getX() >= r.getPointSW().getX() && this._pointSW.getX() <= r.getPointNE().getX() && this._pointSW.getY() <= r.getPointNE().getY() && this.getPointNE().getY() >= r.getPointSW().getY(); // If the SW and the NE points are within this range than the Rectangles overlap
     }
 
 }// class RectangleA
