@@ -168,7 +168,7 @@ public class RectangleB {
      */
     public double getDiagonalLength()
     {
-        return Math.sqrt(Math.pow(this.getHeight(), 2) + Math.pow(this.getWidth(), 2)); // Pythagorean theorem
+        return this._pointSW.distance(this._pointNE);
     }
 
     /** Returns if this ReactangleB area is larger than other
