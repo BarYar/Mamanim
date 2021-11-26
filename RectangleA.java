@@ -10,6 +10,7 @@ public class RectangleA {
     private int _width;
     private int _height;
     private Point _pointSW;
+    private static final int DEFAULT_HEIGHT_AND_WIDTH = 1;
 
     // Constructors
     /** Constructor with the width and the height as parameters
@@ -18,8 +19,8 @@ public class RectangleA {
      */
     public RectangleA(int width, int height)
     {
-        this._width = width > 0 ? width : 1; // If width isn't > 0 then it sets it to 0
-        this._height = height > 0 ? height : 1; // If height isn't > 0 then it sets it to 0
+        this._width = width > 0 ? width : DEFAULT_HEIGHT_AND_WIDTH; // If width isn't > 0 then it sets it to 0
+        this._height = height > 0 ? height : DEFAULT_HEIGHT_AND_WIDTH; // If height isn't > 0 then it sets it to 0
         this._pointSW = new Point(0 , 0);
     }
 
@@ -30,9 +31,9 @@ public class RectangleA {
      */
     public RectangleA(Point p, int width, int height)
     {
-        this._width = width > 0 ? width : 1; // If width isn't > 0 then it sets it to 0
-        this._height = height > 0 ? height : 1; // If height isn't > 0 then it sets it to 0
-        this._pointSW = p;
+        this._width = width > 0 ? width : DEFAULT_HEIGHT_AND_WIDTH; // If width isn't > 0 then it sets it to 0
+        this._height = height > 0 ? height : DEFAULT_HEIGHT_AND_WIDTH; // If height isn't > 0 then it sets it to 0
+        this._pointSW = new Point(p);
     }
 
     /** Constructor with the South West point and the North East point as parameters

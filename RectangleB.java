@@ -8,6 +8,7 @@ public class RectangleB {
     
     private Point _pointSW;
     private Point _pointNE;
+    private static final int DEFAULT_X_AND_Y = 1;
 
     // Constructors
     /** Constructor with the width and the height as parameters
@@ -17,7 +18,7 @@ public class RectangleB {
     public RectangleB(int w, int h)
     {
         this._pointSW = new Point(0,0);
-        this._pointNE = new Point(w > 0 ? w : 1, h > 0 ? h : 1); // If the width and the height aren't > 0 then it sets the coordinates to 1
+        this._pointNE = new Point(w > 0 ? w : DEFAULT_X_AND_Y, h > 0 ? h : DEFAULT_X_AND_Y); // If the width and the height aren't > 0 then it sets the coordinates to 1
     }
 
     /** Constructor with the width, the height and the South West point as parameters
@@ -27,8 +28,8 @@ public class RectangleB {
      */    
     public RectangleB(Point p , int w, int h)
     {
-        this._pointSW = p;
-        this._pointNE = new Point(p.getX() + (w > 0 ? w : 1), p.getY() + (h > 0 ? h : 1)); // If the width and the height aren't > 0 then it sets the coordinates to 1
+        this._pointSW = new Point(p);
+        this._pointNE = new Point(p.getX() + (w > 0 ? w : DEFAULT_X_AND_Y), p.getY() + (h > 0 ? h : DEFAULT_X_AND_Y)); // If the width and the height aren't > 0 then it sets the coordinates to 1
     }
 
     /** Constructor with the South West point and the North East point as parameters
