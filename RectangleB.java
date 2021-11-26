@@ -107,16 +107,8 @@ public class RectangleB {
     {
         int xDiff = p.getX() - this._pointSW.getX(); // The difference between the given point p and this SW in the X
         int yDiff = p.getY() - this._pointSW.getY(); // The difference between the given point p and this SW in the Y 
-        this.setPointNE(new Point(this._pointNE.getX() + xDiff, this._pointNE.getY() + yDiff)); // Updating the NE point according to the sw change (Using xDiff and yDiff), There is no Aliasing since the set creates a new Point 
+        this._pointNE = new Point(this._pointNE.getX() + xDiff, this._pointNE.getY() + yDiff); // Updating the NE point according to the sw change (Using xDiff and yDiff), There is no Aliasing since the set creates a new Point 
         this._pointSW = new Point(p);
-    }
-
-    /** Sets the North East point of the Rectangle
-     * @param p the point to be set
-     */
-    public void setPointNE(Point p)
-    {
-        this._pointNE = new Point(p);
     }
 
     /** Returns the string of RectangleB
