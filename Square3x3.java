@@ -49,9 +49,6 @@ public class Square3x3 {
     }
 
     /** Private method for the getter and setter, checks if the location is valid (0-2)
-     * @param row the row of the location
-     * @param col the column of the location
-     * @return if the location is valid
      */
     private boolean isValidLocation(int row, int col)
     {

@@ -33,8 +33,6 @@ public class Sudoku {
 
     /** Private method for the isValid method that checks if all the values of the array are true and afterwards
      * it sets them to false
-     * @param values the values array 
-     * @return whether all the values of the array are true
      */
     private boolean allValuesAreTrue(boolean[]values)
     {

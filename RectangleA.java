@@ -151,9 +151,9 @@ public class RectangleA {
         return Math.sqrt(Math.pow(this._height, 2) + Math.pow(this._width, 2)); // Pythagorean theorem
     }
 
-    /** Returns if this ReactangleA area is larger than other
+    /** Returns if this RectangleA area is larger than other
      * @param other the Rectangle to be compared to
-     * @return if this ReactangleA area is larger than other(boolean)
+     * @return if this RectangleA area is larger than other(boolean)
      */
     public boolean isLarger(RectangleA other)
     {
@@ -168,7 +168,7 @@ public class RectangleA {
         return new Point(this._pointSW.getX() + this._width, this._pointSW.getY() + this._height); // Creating the North East point by using the SW point, the width and the height
     }
 
-    /** Change the sides of the ReactangleA - height become width and vice versa
+    /** Change the sides of the RectangleA - height become width and vice versa
      */
     public void changeSides()
     {
@@ -178,9 +178,6 @@ public class RectangleA {
     }
 
     /** Private methods for isIn method, checks if point from this RectangleA is inside r 
-     * @param r The RectangleA to be compared to 
-     * @param loc the location: SW/ NE
-     * @return
      */
     private boolean isRectangleAPointInsideR(RectangleA r, String loc)
     {
@@ -195,14 +192,10 @@ public class RectangleA {
                 pointY = this.getPointNE().getY();
                 break;
         }
-        /**  I didn't use the isAbove, isUnder, isLeft and isRight methods because they're making the code longer and more complicated
-         For example - the first condition would look like this if used those methods (I would use Point p instead pointX and pointY):  
-         p.isRight(r.getPointSW()) ||  (!p.isRight(r.getPointSW()) && (!p.isLeft(r.getPointSW()) instead of: pointX >= r.getPointSW().getX()
-         I could've made xEquals and yEquals methods in Point but it wouldn't help because they're private */
         return pointX >= r.getPointSW().getX() && pointX <= r.getPointNE().getX() && pointY >= r.getPointSW().getY() && pointY <= r.getPointNE().getY(); // If the point is within this range then the point is inside the rectangle
     }
 
-    /** Checks if this ReactangleA is inside r(including shared edges)
+    /** Checks if this RectangleA is inside r(including shared edges)
      * @param r The RectangleA to be compared to 
      * @return whether this RectangleA is inside other RectangleA(boolean)
      */
@@ -211,13 +204,12 @@ public class RectangleA {
         return isRectangleAPointInsideR(r, "SW") && isRectangleAPointInsideR(r, "NE"); // If the SW and the NE points are inside the Rectangle r then this entire Rectangle is inside r
     }
 
-    /** Checks if there is a lap between this reactangleA and r
+    /** Checks if there is a lap between this RectangleA and r
      * @param r The RectangleA to be compared to 
      * @return whether this RectangleA overlaps other RectangleA(boolean)
      */
     public boolean overlap(RectangleA r)
     {
-        // Same explanation as in isRectangleAPointInsideR
         return this.getPointNE().getX() >= r.getPointSW().getX() && this._pointSW.getX() <= r.getPointNE().getX() && this._pointSW.getY() <= r.getPointNE().getY() && this.getPointNE().getY() >= r.getPointSW().getY(); // If the SW and the NE points are within this range than the Rectangles overlap
     }
 

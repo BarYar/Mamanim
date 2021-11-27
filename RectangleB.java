@@ -164,16 +164,16 @@ public class RectangleB {
         return this._pointSW.distance(this._pointNE);
     }
 
-    /** Returns if this ReactangleB area is larger than other
+    /** Returns if this RectangleB area is larger than other
      * @param other the Rectangle to be compared to
-     * @return if this ReactangleB area is larger than other(boolean)
+     * @return if this RectangleB area is larger than other(boolean)
      */
     public boolean isLarger(RectangleB other)
     {
         return this.getArea() > other.getArea();
     }
 
-    /** Change the sides of the ReactangleB - height become width and vice versa
+    /** Change the sides of the RectangleB - height become width and vice versa
      */
     public void changeSides()
     {
@@ -183,9 +183,6 @@ public class RectangleB {
     }
 
     /** Private methods for isIn method, checks if point from this RectangleB is inside r 
-     * @param r The RectangleB to be compared to 
-     * @param loc the location: SW/ NE
-     * @return
      */
     private boolean isRectangleBPointInsideR(RectangleB r, String loc)
     {
@@ -200,11 +197,10 @@ public class RectangleB {
                 pointY = this._pointNE.getY();
                 break;
         }
-        // Same explanation as in RectangleA
         return pointX >= r.getPointSW().getX() && pointX <= r.getPointNE().getX() && pointY >= r.getPointSW().getY() && pointY <= r.getPointNE().getY(); // If the point is within this range then the point is inside the rectangle
     }
 
-    /** Checks if this ReactangleB is inside r(including shared edges)
+    /** Checks if this RectangleB is inside r(including shared edges)
      * @param r The RectangleB to be compared to 
      * @return whether this RectangleB is inside other RectangleB(boolean)
      */
@@ -213,13 +209,12 @@ public class RectangleB {
         return isRectangleBPointInsideR(r, "SW") && isRectangleBPointInsideR(r, "NE");
     }
 
-    /** Checks if there is a lap between this reactangleB and r
+    /** Checks if there is a lap between this RectangleB and r
      * @param r The RectangleB to be compared to 
      * @return whether this RectangleB overlaps other RectangleB(boolean)
      */
     public boolean overlap(RectangleB r)
     {
-        // Same explanation as in RectangleA
         return this._pointNE.getX() >= r.getPointSW().getX() && this._pointSW.getX() <= r.getPointNE().getX() && this._pointSW.getY() <= r.getPointNE().getY() && this._pointNE.getY() >= r.getPointSW().getY(); // If the SW and the NE points are within this range than the Rectangles overlap
     }
 }// class RectangleB
