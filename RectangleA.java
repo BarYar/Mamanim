@@ -3,7 +3,7 @@
  * The RectangleA class represents a Rectangle
  * This class has 2 instance variables int width, int height and Point pointSW.
  * @author Bar Yaron
- * @version 23/11/21
+ * @version 27/11/21
  */
 public class RectangleA {
 

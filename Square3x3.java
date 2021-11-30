@@ -30,7 +30,7 @@ public class Square3x3 {
         for (int i=0; i<3; i++)
         {
             for (int j=0; j<3; j++)
-                _3x3[i][j] = i < array.length && j < array.length ? array[i][j] : -1; // if array has value in [i][j] then it sets it to the value, otherwise to -1
+                _3x3[i][j] = i < array.length && j < array[i].length ? array[i][j] : -1; // if array has value in [i][j] then it sets it to the value, otherwise to -1
         }
     }
 

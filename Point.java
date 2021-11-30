@@ -2,7 +2,7 @@
  * The point class represents point in a cartesian system.
  * This class has 2 instance variables int x and int y.
  * @author Bar Yaron
- * @version 23/11/21
+ * @version 27/11/21
  */
 public class Point{
 
