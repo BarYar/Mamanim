@@ -125,7 +125,7 @@ public class Square3x3 {
      */
     public void whosThereRow(int row, boolean[]values)
     {
-        for(int i=0; i < 3;i++) // Iterating over the row
+        for(int i=0; i < 3; i++) // Iterating over the row
         {
             if (this._3x3[row][i] >= 1 && this._3x3[row][i] <= 9)
                 values[this._3x3[row][i]] = true;
