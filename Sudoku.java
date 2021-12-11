@@ -6,14 +6,13 @@
  */
 public class Sudoku {
     
-    private Square3x3[][] _9x9; 
+    private Square3x3[][] _9x9 = new Square3x3[3][3]; 
 
     // Constructors
     /** Constructor that enters -1 to every cell in the Sudoku
      */
     public Sudoku()
     {
-        this._9x9 = new Square3x3[3][3]; 
         for (int i = 0; i < 3; i++)
             for (int j = 0; j < 3; j++)
                 this._9x9[i][j] = new Square3x3(); // Creating a new object in each of the cells in the array
@@ -24,7 +23,6 @@ public class Sudoku {
      */
     public Sudoku(Square3x3[][] square3x3Array)
     {
-        this._9x9 = new Square3x3[3][3];
         for (int i = 0; i < 3; i++)
             for (int j = 0; j < 3; j++)
                 this._9x9[i][j] = new Square3x3(square3x3Array[i][j]); // Using the copy constructor of Square3x3
