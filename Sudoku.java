@@ -19,7 +19,7 @@ public class Sudoku {
                 this._9x9[i][j] = new Square3x3(); // Creating a new object in each of the cells in the array
     }
 
-    /** Coyt constructor of values from Square3x3 array
+    /** Copy constructor of values from Square3x3 array
      * @param square3x3Array the Square3x3 array that will be copied 
      */
     public Sudoku(Square3x3[][] square3x3Array)
