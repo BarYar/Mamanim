@@ -2,7 +2,7 @@
  * The Square3x3 class represents a 2 dimensional array of ints with size of 3x3
  * This class has 1 instance variable
  * @author Bar Yaron
- * @version 23/11/21
+ * @version 11/12/21
  */
 public class Square3x3 {
     
