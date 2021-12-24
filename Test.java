@@ -1,4 +1,4 @@
-class  A{
+abstract class  A{
 
     public void hey(int a)
     {

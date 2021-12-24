@@ -88,5 +88,12 @@ public class Test2{
         A b = new B(2, 22);
 
         System.out.println(b.doubleX());
+<<<<<<< HEAD
+=======
+        
+        //System.out.println(b.tenTimesX());
+        
+        System.out.println(((B)a).tenTimesX()); 
+>>>>>>> a7be689 (Add Opal 2)
     }
 }
