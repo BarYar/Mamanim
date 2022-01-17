@@ -54,9 +54,9 @@ class B extends A {
 
     }
 
-    public int getX()  {
+    public int getX(int a)  {
 
-        return _x;
+        return _x + a;
 
     }
 
@@ -91,7 +91,7 @@ public class Test2{
 <<<<<<< HEAD
 =======
         
-        //System.out.println(b.tenTimesX());
+        //System.out.println(b.getX(5));
         
         System.out.println(((B)a).tenTimesX()); 
 >>>>>>> a7be689 (Add Opal 2)

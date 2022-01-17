@@ -1,5 +1,9 @@
 abstract class  A{
 
+    public A()
+    {
+        System.out.println("heyy" + a);
+    }
     public void hey(int a)
     {
         System.out.println("AAA" + a);
@@ -11,16 +15,17 @@ class B extends A {
     int _a;
     public B(int a)
     {
+        //super(a);
         _a = a;
         //super(5);
     }
-    /** 
+    
     @Override
     public void hey(int b)
     {
         System.out.println("BBB" + b);
     }
-    */
+    
 }
 
     
