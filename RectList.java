@@ -1,11 +1,9 @@
-import java.io.Console;
-
 /**
  *This Class represent a linked list of RectNode objects (RectangleA)
  * This class has 1 instance variables:
  * _head - Reference to the head of the linked list
  * @author Bar Yaron
- * @version 29/1/22
+ * @version 29/01/22
  */
 public class RectList {
     
@@ -14,6 +12,8 @@ public class RectList {
 
     /**
      * Constructor for the RectList, sets the Head to null
+     * Time Complexity - O(1) - Doing a known amount of actions - setting the head to null
+     * Space Complexity - O(1) - Set the head to null - known amount(null) of space was created.
      */
     public RectList()
     {   
@@ -105,9 +105,7 @@ public class RectList {
                     mostLeftPointSW = temp.getRect().getPointSW();
 
         }
-        if (mostLeftPointSW != null)
-            mostLeftPointSW = new Point(mostLeftPointSW);
-        return mostLeftPointSW;
+        return mostLeftPointSW; // There is no need in creating a new point for preventing aliasing, since according to the API the getPointSW returns a copy of the point
     }
 
     /**
@@ -128,10 +126,7 @@ public class RectList {
                     highestPointNE = temp.getRect().getPointNE();
 
         }
-
-        if (highestPointNE != null)
-            highestPointNE = new Point(highestPointNE);
-        return highestPointNE;
+        return highestPointNE; // There is no need in creating a new point for preventing aliasing, since according to the API the getPointNE returns a copy of the point
     }
 
     /**
@@ -190,7 +185,7 @@ public class RectList {
     /**
      * Returns the toString of the class
      * Time Complexity - O(n) - Iterating over an unknown size of RectList.
-     * Space Complexity - O(1) - We create 1 primitives and 1 object(String).
+     * Space Complexity - O(n) - We're creating the Rectangle toString n amount of times.
      * @return the toString of the class
      */
     public String toString()
